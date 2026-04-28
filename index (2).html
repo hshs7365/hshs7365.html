@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ehab Store | متجر إيهاب</title>
+
+<!-- خط فخم -->
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;500;700;900&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
+
+<style>
+
+body {
+    margin: 0;
+    font-family: 'Cairo', sans-serif;
+    background: linear-gradient(135deg, #020617, #0f172a);
+    color: white;
+    text-align: center;
+}
+
+/* مربع اسم المتجر */
+.logo-box {
+    margin: 30px auto;
+    padding: 20px;
+    width: fit-content;
+    border-radius: 20px;
+    background: rgba(255,255,255,0.05);
+    box-shadow: 0 0 25px #38bdf8;
+    animation: glow 2s infinite alternate;
+}
+
+.logo-box h1 {
+    margin: 0;
+    font-size: 30px;
+    font-family: 'Playfair Display', serif;
+    letter-spacing: 1px;
+    color: #38bdf8;
+}
+
+.logo-box span {
+    font-size: 14px;
+    color: #94a3b8;
+}
+
+/* انيميشن */
+@keyframes glow {
+    from { box-shadow: 0 0 10px #38bdf8; }
+    to { box-shadow: 0 0 30px #38bdf8; }
+}
+
+/* النص الرئيسي */
+.main-text {
+    font-size: 18px;
+    color: #cbd5f5;
+    margin-bottom: 20px;
+}
+
+/* القائمة */
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    background: rgba(255,255,255,0.05);
+    padding: 12px;
+    backdrop-filter: blur(10px);
+}
+
+nav button {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+/* الأقسام */
+.section {
+    display: none;
+    padding: 30px;
+}
+
+.active {
+    display: block;
+}
+
+/* الكروت */
+.card {
+    background: rgba(255,255,255,0.05);
+    margin: 15px;
+    padding: 25px;
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 25px #38bdf8;
+}
+
+/* زر */
+.btn {
+    margin-top: 10px;
+    padding: 10px 18px;
+    border: none;
+    border-radius: 10px;
+    background: #38bdf8;
+    color: black;
+    cursor: pointer;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="logo-box">
+    <h1>Ehab Store | متجر إيهاب</h1>
+    <span>خدمات رقمية باحتراف عالي</span>
+</div>
+
+<div class="main-text">
+    🚀 نقدم لك أفضل خدمات السوشيال ميديا بسرعة وجودة وموثوقية عالية
+</div>
+
+<nav>
+    <button onclick="showSection('home')">الرئيسية</button>
+    <button onclick="showSection('services')">الخدمات</button>
+    <button onclick="showSection('contact')">تواصل</button>
+</nav>
+
+<!-- الرئيسية -->
+<div id="home" class="section active">
+    <div class="card">
+        <h2>مرحباً بك في متجر إيهاب</h2>
+        <p>وجهتك الأولى للحصول على خدمات رقمية احترافية بمستوى عالمي</p>
+    </div>
+</div>
+
+<!-- الخدمات -->
+<div id="services" class="section">
+
+    <div class="card">
+        <h3>زيادة متابعين</h3>
+        <button class="btn" onclick="order('زيادة متابعين')">اطلب الآن</button>
+    </div>
+
+    <div class="card">
+        <h3>أرقام وهمية (عربي / أجنبي)</h3>
+        <button class="btn" onclick="order('أرقام وهمية')">اطلب الآن</button>
+    </div>
+
+    <div class="card">
+        <h3>شحن ألعاب</h3>
+        <button class="btn" onclick="order('شحن ألعاب')">اطلب الآن</button>
+    </div>
+
+    <div class="card">
+        <h3>توثيق حسابات</h3>
+        <button class="btn" onclick="order('توثيق حسابات')">اطلب الآن</button>
+    </div>
+
+    <div class="card">
+        <h3>فك حسابات محظورة</h3>
+        <button class="btn" onclick="order('فك حساب محظور')">اطلب الآن</button>
+    </div>
+
+</div>
+
+<!-- التواصل -->
+<div id="contact" class="section">
+    <div class="card">
+        <h2>تواصل معنا</h2>
+        <button class="btn" onclick="order('استفسار')">واتساب</button>
+    </div>
+</div>
+
+<script>
+function showSection(section) {
+    document.querySelectorAll('.section').forEach(sec => sec.classList.remove('active'));
+    document.getElementById(section).classList.add('active');
+}
+
+function order(service) {
+    let message = "مرحباً، أريد طلب: " + service;
+    let url = "https://wa.me/967734289491?text=" + encodeURIComponent(message);
+    window.open(url, "_blank");
+}
+</script>
+
+</body>
+</html>
