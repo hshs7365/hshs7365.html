@@ -1,0 +1,570 @@
+<!DOCTYPE html>  <html lang="ar" dir="rtl">  
+<head>  
+<meta charset="UTF-8">  
+<meta name="viewport" content="width=device-width, initial-scale=1.0">  <title>EHAB STORE | متجر إيهاب</title>  <meta name="description" content="EHAB STORE - خدمات رقمية وحلول تقنية وشحن ألعاب وأرقام مميزة وخدمات منصات التواصل الاجتماعي.">  <style>  
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap');  
+  
+*{  
+    margin:0;  
+    padding:0;  
+    box-sizing:border-box;  
+}  
+  
+html{  
+    scroll-behavior:smooth;  
+}  
+  
+body{  
+    font-family:"Cairo",sans-serif;  
+    background:#05070b;  
+    color:#fff;  
+    overflow-x:hidden;  
+}  
+  
+/* الخلفية */  
+  
+body::before{  
+    content:"";  
+    position:fixed;  
+    width:500px;  
+    height:500px;  
+    top:-180px;  
+    right:-180px;  
+    background:rgba(0,170,255,.12);  
+    filter:blur(120px);  
+    border-radius:50%;  
+    pointer-events:none;  
+    z-index:-1;  
+}  
+  
+body::after{  
+    content:"";  
+    position:fixed;  
+    width:500px;  
+    height:500px;  
+    bottom:-200px;  
+    left:-180px;  
+    background:rgba(212,175,55,.10);  
+    filter:blur(120px);  
+    border-radius:50%;  
+    pointer-events:none;  
+    z-index:-1;  
+}  
+  
+/* شريط التنقل */  
+  
+nav{  
+    position:fixed;  
+    top:0;  
+    width:100%;  
+    z-index:1000;  
+    padding:15px 6%;  
+    background:rgba(5,7,11,.82);  
+    backdrop-filter:blur(18px);  
+    border-bottom:1px solid rgba(255,255,255,.07);  
+}  
+  
+.nav-box{  
+    max-width:1200px;  
+    margin:auto;  
+    display:flex;  
+    align-items:center;  
+    justify-content:space-between;  
+}  
+  
+.logo{  
+    font-family:"Playfair Display",serif;  
+    font-size:25px;  
+    font-weight:700;  
+    letter-spacing:2px;  
+    color:#e7c65b;  
+}  
+  
+.logo span{  
+    color:#fff;  
+}  
+  
+nav ul{  
+    display:flex;  
+    gap:28px;  
+    list-style:none;  
+}  
+  
+nav a{  
+    color:#ddd;  
+    text-decoration:none;  
+    font-size:14px;  
+    transition:.3s;  
+}  
+  
+nav a:hover{  
+    color:#e7c65b;  
+}  
+  
+/* الهيرو */  
+  
+.hero{  
+    min-height:100vh;  
+    padding:150px 7% 80px;  
+    display:flex;  
+    align-items:center;  
+    justify-content:center;  
+    text-align:center;  
+    position:relative;  
+}  
+  
+.hero-content{  
+    max-width:950px;  
+}  
+  
+.badge{  
+    display:inline-block;  
+    padding:8px 18px;  
+    border:1px solid rgba(231,198,91,.35);  
+    background:rgba(231,198,91,.06);  
+    border-radius:50px;  
+    color:#e7c65b;  
+    font-size:13px;  
+    margin-bottom:25px;  
+}  
+  
+.hero h1{  
+    font-size:clamp(45px,8vw,85px);  
+    line-height:1;  
+    font-family:"Playfair Display",serif;  
+    letter-spacing:2px;  
+    margin-bottom:22px;  
+}  
+  
+.hero h1 span{  
+    color:#e7c65b;  
+}  
+  
+.hero p{  
+    max-width:720px;  
+    margin:auto;  
+    color:#aeb5c2;  
+    line-height:2;  
+    font-size:16px;  
+}  
+  
+.hero-buttons{  
+    margin-top:35px;  
+    display:flex;  
+    justify-content:center;  
+    gap:15px;  
+    flex-wrap:wrap;  
+}  
+  
+.btn{  
+    text-decoration:none;  
+    padding:13px 27px;  
+    border-radius:12px;  
+    font-weight:700;  
+    transition:.3s;  
+}  
+  
+.btn-main{  
+    color:#05070b;  
+    background:linear-gradient(135deg,#f4d76b,#b98b20);  
+    box-shadow:0 8px 35px rgba(231,198,91,.18);  
+}  
+  
+.btn-main:hover{  
+    transform:translateY(-3px);  
+    box-shadow:0 12px 40px rgba(231,198,91,.28);  
+}  
+  
+.btn-second{  
+    color:#fff;  
+    border:1px solid rgba(255,255,255,.15);  
+    background:rgba(255,255,255,.03);  
+}  
+  
+.btn-second:hover{  
+    border-color:#e7c65b;  
+    color:#e7c65b;  
+}  
+  
+/* العناوين */  
+  
+.section{  
+    padding:90px 6%;  
+}  
+  
+.section-title{  
+    text-align:center;  
+    margin-bottom:55px;  
+}  
+  
+.section-title small{  
+    color:#e7c65b;  
+    font-size:13px;  
+}  
+  
+.section-title h2{  
+    font-size:38px;  
+    margin:8px 0 12px;  
+}  
+  
+.section-title p{  
+    color:#8e96a5;  
+    max-width:650px;  
+    margin:auto;  
+    line-height:1.9;  
+}  
+  
+/* الخدمات */  
+  
+.services{  
+    max-width:1200px;  
+    margin:auto;  
+    display:grid;  
+    grid-template-columns:repeat(3,1fr);  
+    gap:20px;  
+}  
+  
+.service{  
+    position:relative;  
+    padding:30px 25px;  
+    min-height:340px;  
+    border-radius:20px;  
+    background:  
+        linear-gradient(145deg,rgba(255,255,255,.065),rgba(255,255,255,.018));  
+    border:1px solid rgba(255,255,255,.08);  
+    overflow:hidden;  
+    transition:.35s;  
+}  
+  
+.service::before{  
+    content:"";  
+    position:absolute;  
+    width:120px;  
+    height:120px;  
+    top:-60px;  
+    left:-60px;  
+    border-radius:50%;  
+    background:rgba(0,174,255,.09);  
+    filter:blur(15px);  
+}  
+  
+.service:hover{  
+    transform:translateY(-7px);  
+    border-color:rgba(231,198,91,.45);  
+    box-shadow:0 18px 50px rgba(0,0,0,.35);  
+}  
+  
+.icon{  
+    width:55px;  
+    height:55px;  
+    display:flex;  
+    align-items:center;  
+    justify-content:center;  
+    border-radius:15px;  
+    background:rgba(231,198,91,.09);  
+    border:1px solid rgba(231,198,91,.18);  
+    font-size:25px;  
+    margin-bottom:20px;  
+}  
+  
+.service h3{  
+    font-size:20px;  
+    margin-bottom:12px;  
+}  
+  
+.service p{  
+    color:#929aa9;  
+    font-size:14px;  
+    line-height:2;  
+    min-height:90px;  
+}  
+  
+.service .order{  
+    display:inline-block;  
+    margin-top:22px;  
+    text-decoration:none;  
+    color:#e7c65b;  
+    font-size:13px;  
+    font-weight:700;  
+    border:1px solid rgba(231,198,91,.25);  
+    padding:9px 16px;  
+    border-radius:9px;  
+    transition:.3s;  
+}  
+  
+.service .order:hover{  
+    background:#e7c65b;  
+    color:#05070b;  
+}  
+  
+/* لماذا نحن */  
+  
+.why{  
+    max-width:1100px;  
+    margin:auto;  
+    display:grid;  
+    grid-template-columns:repeat(3,1fr);  
+    gap:20px;  
+}  
+  
+.why-card{  
+    padding:28px;  
+    text-align:center;  
+    background:rgba(255,255,255,.025);  
+    border:1px solid rgba(255,255,255,.07);  
+    border-radius:18px;  
+}  
+  
+.why-card .big-icon{  
+    font-size:32px;  
+    margin-bottom:15px;  
+}  
+  
+.why-card h3{  
+    margin-bottom:10px;  
+}  
+  
+.why-card p{  
+    color:#8f97a5;  
+    font-size:13px;  
+    line-height:1.9;  
+}  
+  
+/* التواصل */  
+  
+.contact{  
+    max-width:900px;  
+    margin:auto;  
+    text-align:center;  
+    padding:55px 25px;  
+    border-radius:25px;  
+    background:  
+        linear-gradient(135deg,rgba(231,198,91,.08),rgba(0,160,255,.04));  
+    border:1px solid rgba(231,198,91,.18);  
+}  
+  
+.contact h2{  
+    font-size:35px;  
+    margin-bottom:15px;  
+}  
+  
+.contact p{  
+    color:#929aa9;  
+    line-height:2;  
+    margin-bottom:25px;  
+}  
+  
+.whatsapp{  
+    display:inline-flex;  
+    align-items:center;  
+    gap:10px;  
+    text-decoration:none;  
+    padding:13px 25px;  
+    border-radius:12px;  
+    background:#e7c65b;  
+    color:#05070b;  
+    font-weight:800;  
+    transition:.3s;  
+}  
+  
+.whatsapp:hover{  
+    transform:translateY(-3px);  
+}  
+  
+/* الفوتر */  
+  
+footer{  
+    margin-top:80px;  
+    padding:30px 6%;  
+    text-align:center;  
+    border-top:1px solid rgba(255,255,255,.07);  
+    color:#777f8e;  
+    font-size:13px;  
+}  
+  
+footer strong{  
+    color:#e7c65b;  
+}  
+  
+/* موبايل */  
+  
+@media(max-width:900px){  
+  
+    nav ul{  
+        display:none;  
+    }  
+  
+    .services{  
+        grid-template-columns:repeat(2,1fr);  
+    }  
+  
+    .why{  
+        grid-template-columns:1fr;  
+    }  
+}  
+  
+@media(max-width:600px){  
+  
+    .hero{  
+        padding-top:130px;  
+    }  
+  
+    .hero h1{  
+        font-size:50px;  
+    }  
+  
+    .hero p{  
+        font-size:14px;  
+    }  
+  
+    .services{  
+        grid-template-columns:1fr;  
+    }  
+  
+    .section{  
+        padding:70px 5%;  
+    }  
+  
+    .section-title h2{  
+        font-size:30px;  
+    }  
+  
+    .service{  
+        min-height:auto;  
+    }  
+}  
+</style>  </head>  <body>  <!-- NAV -->  <nav>  
+<div class="nav-box">  <div class="logo">  
+EHAB <span>STORE</span>  
+</div>  <ul>  
+<li><a href="#home">الرئيسية</a></li>  
+<li><a href="#services">الخدمات</a></li>  
+<li><a href="#why">لماذا نحن</a></li>  
+<li><a href="#contact">تواصل معنا</a></li>  
+</ul>  </div>  
+</nav>  <!-- HERO -->  <section class="hero" id="home">  <div class="hero-content">  <div class="badge">  
+خدمات رقمية • حلول تقنية • دعم موثوق  
+</div>  <h1>  
+EHAB <span>STORE</span>  
+</h1>  <p>  
+مرحبًا بك في متجر إيهاب، وجهتك للخدمات الرقمية والحلول التقنية.  
+نوفر مجموعة متنوعة من الخدمات للأفراد وأصحاب الحسابات والألعاب  
+ومنصات التواصل الاجتماعي، بتجربة سهلة وواضحة.  
+</p>  <div class="hero-buttons">  <a href="#services" class="btn btn-main">  
+استكشف الخدمات  
+</a>  <a href="#contact" class="btn btn-second">  
+تواصل معنا  
+</a>  </div>  </div>  </section>  <!-- SERVICES -->  <section class="section" id="services">  <div class="section-title">  <small>EHAB SERVICES</small>
+
+<h2>خدماتنا</h2>  <p>  
+مجموعة من الخدمات الرقمية والتقنية، مع شرح واضح لكل خدمة  
+وطريقة سهلة لطلبها.  
+</p>  </div>  <div class="services">  <!-- 1 -->  <div class="service">  <div class="icon">📱</div>  <h3>أرقام عربية وأجنبية مميزة</h3>  <p>  
+توفير أرقام عربية وأجنبية مميزة لاستخدامات متعددة  
+وعلى مختلف منصات التواصل والخدمات الرقمية،  
+بحسب التوفر والاستخدام المسموح به لكل منصة.  
+</p>  <a class="order"  
+href="https://wa.me/967734289491?text=مرحباً%20EHAB%20STORE%2C%20أريد%20طلب%20خدمة%20الأرقام%20المميزة">
+طلب الخدمة
+</a>
+
+</div>  <!-- 2 -->  <div class="service">  <div class="icon">🔵</div>  <h3>توثيق الحسابات</h3>  <p>  
+مساعدة وإرشاد في تجهيز الحسابات ومتطلبات التقديم  
+على برامج التوثيق والعلامات الرسمية، مع توضيح  
+الخطوات والاشتراطات المتاحة لكل منصة.  
+</p>  <a class="order"  
+href="https://wa.me/967734289491?text=مرحباً%20EHAB%20STORE%2C%20أريد%20طلب%20خدمة%20توثيق%20حساب">
+طلب الخدمة
+</a>
+
+</div>  <!-- 3 -->  <div class="service">  <div class="icon">📈</div>  <h3>المتابعين والإعجابات والمشاهدات</h3>  <p>  
+خدمات نمو وتفاعل للحسابات على منصات التواصل  
+الاجتماعي، وتشمل المتابعين والإعجابات والمشاهدات  
+بحسب الخدمة والمنصة المتاحة.  
+</p>  <a class="order"  
+href="https://wa.me/967734289491?text=مرحباً%20EHAB%20STORE%2C%20أريد%20طلب%20خدمة%20زيادة%20التفاعل">
+طلب الخدمة
+</a>
+
+</div>  <!-- 4 -->  <div class="service">  <div class="icon">🎮</div>  <h3>شحن الألعاب</h3>  <p>  
+شحن الألعاب والخدمات الرقمية للألعاب حسب الدولة  
+والمنصة واللعبة، مع توفير خيارات مختلفة بحسب  
+الخدمة المتاحة.  
+</p>  <a class="order"  
+href="https://wa.me/967734289491?text=مرحباً%20EHAB%20STORE%2C%20أريد%20طلب%20شحن%20لعبة">
+طلب الخدمة
+</a>
+
+</div>  <!-- 5 -->  <div class="service">  <div class="icon">🔓</div>  <h3>استرجاع وفك الحسابات</h3>  <p>  
+مساعدة في حالات فقدان الوصول أو تقييد الحسابات،  
+مع إرشاد المستخدم إلى طرق الاسترداد الرسمية  
+وتجهيز طلبات الدعم المناسبة للمنصة.  
+</p>  <a class="order"  
+href="https://wa.me/967734289491?text=مرحباً%20EHAB%20STORE%2C%20أريد%20المساعدة%20في%20استرجاع%20حساب">
+طلب الخدمة
+</a>
+
+</div>  <!-- 6 -->  <div class="service">  <div class="icon">🛡️</div>  <h3>حلول الابتزاز الإلكتروني</h3>  <p>  
+مساعدة وإرشاد للتعامل الآمن مع حالات الابتزاز الإلكتروني،  
+مثل حماية الحسابات، حفظ الأدلة، الإبلاغ للمنصات  
+والجهات المختصة، وتقليل مخاطر تعرض الحساب للخطر.  
+</p>  <a class="order"  
+href="https://wa.me/967734289491?text=مرحباً%20EHAB%20STORE%2C%20أحتاج%20مساعدة%20بخصوص%20ابتزاز%20إلكتروني">
+طلب المساعدة
+</a>
+
+</div>  <!-- 7 -->  <div class="service">  <div class="icon">💻</div>  <h3>الحسابات والخدمات الرقمية</h3>  <p>  
+حلول وخدمات رقمية متنوعة للأفراد وأصحاب المشاريع،  
+مع توفير الخيارات المتاحة بحسب نوع الخدمة  
+والمنصة المطلوبة.  
+</p>  <a class="order"  
+href="https://wa.me/967734289491?text=مرحباً%20EHAB%20STORE%2C%20أريد%20الاستفسار%20عن%20الخدمات%20الرقمية">
+طلب الخدمة
+</a>
+
+</div>  <!-- 8 -->  <div class="service">  <div class="icon">🔐</div>  <h3>مساعدة الحسابات وتأمينها</h3>  <p>  
+مساعدة في تحسين أمان الحسابات، تفعيل وسائل الحماية،  
+مراجعة إعدادات الدخول، وإرشادك إلى أفضل ممارسات  
+حماية الحساب من الاختراق.  
+</p>  <a class="order"  
+href="https://wa.me/967734289491?text=مرحباً%20EHAB%20STORE%2C%20أريد%20مساعدة%20في%20تأمين%20حسابي">
+طلب الخدمة
+</a>
+
+</div>  <!-- 9 -->  <div class="service">  <div class="icon">📲</div>  <h3>خدمات منصات التواصل</h3>  <p>  
+حلول وخدمات متنوعة لمنصات التواصل الاجتماعي،  
+مع إمكانية الاستفسار عن الخدمة المناسبة لحسابك  
+قبل تنفيذ أي طلب.  
+</p>  <a class="order"  
+href="https://wa.me/967734289491?text=مرحباً%20EHAB%20STORE%2C%20أريد%20الاستفسار%20عن%20خدمات%20التواصل">
+طلب الخدمة
+</a>
+
+</div>  </div>  </section>  <!-- WHY US -->  <section class="section" id="why">  <div class="section-title">  <small>WHY EHAB STORE</small>
+
+<h2>لماذا EHAB STORE؟</h2>  <p>  
+تجربة بسيطة وواضحة من اختيار الخدمة حتى التواصل وطلبها.  
+</p>  </div>  <div class="why">  <div class="why-card">  <div class="big-icon">⚡</div>  <h3>سرعة التواصل</h3>  <p>  
+تواصل مباشر وسهل للاستفسار عن الخدمة  
+ومعرفة التفاصيل قبل الطلب.  
+</p>  </div>  <div class="why-card">  <div class="big-icon">💎</div>  <h3>تجربة راقية</h3>  <p>  
+واجهة مرتبة وخدمات موضحة بطريقة تساعدك  
+على الوصول لما تحتاجه بسهولة.  
+</p>  </div>  <div class="why-card">  <div class="big-icon">🛡️</div>  <h3>اهتمام وأمان</h3>  <p>  
+نحرص على تقديم الإرشادات المناسبة وحماية  
+معلوماتك وعدم طلب كلمات المرور أو رموز التحقق.  
+</p>  </div>  </div>  </section>  <!-- CONTACT -->  <section class="section" id="contact">  <div class="contact">  <h2>جاهز لطلب خدمتك؟</h2>  <p>  
+إذا كنت تعرف الخدمة التي تحتاجها أو تريد الاستفسار  
+عن خدمة معينة، تواصل معنا مباشرة عبر واتساب.  
+</p>  <a  
+class="whatsapp"  
+href="https://wa.me/967734289491?text=مرحباً%20EHAB%20STORE%2C%20أريد%20الاستفسار%20عن%20خدماتكم"  
+target="_blank">
+
+💬 تواصل معنا عبر واتساب
+
+</a>  </div>  </section>  <!-- FOOTER -->  <footer>  © 2026 جميع الحقوق محفوظة —
+<strong>Ehab Samir</strong>
+
+</footer>  </body>  
+</html>
